@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR  -->
+
+  <nav class="p-3 flex justify-between">
+    <div class="logo">
+      <h1 class="text-5xl font-bold">Sushill.</h1>
+    </div>
+    <!-- LINKS VISIBLE ON THE LARGER SCREEN'S -->
+    <div id="nav_menu" class="flex hidden lg:flex gap-12 items-center">
+      <a href="" class="font-medium hover:shadow-lg">Pricing</a>
+      <a href="" class="font-medium hover:shadow-lg">Docs</a>
+      <a href="" class="font-medium hover:shadow-lg">Contact</a>
+      <a href="" class="font-medium hover:shadow-lg">About</a>
+    </div>
+    <div class="hidden md:block" id="button">
+      <button class="border border-gray-500 px-5 py-2 rounded-lg hover:border-gray-700 hover:shadow-lg shadow-md">
+        Ui developer
+      </button>
+    </div>
+
+    <!-- HAMBURGER FOR MOBILE DEVICES -->
+    <div class="hamburger md:hidden">
+      <button class="text-5xl" onclick="handleMenu()"> = </button>
+    </div>
+  </nav>
+
+  <!-- OVERLAP MENU ITEMS ON SMALLER SCREEN'S -->
+  <div class="fixed hidden z-10 md:hidden bg-white inset-0 p-3" id="nav-dialog">
+    <div id="nav-bar" class="flex justify-between">
+      <div class="logo">
+        <h1 class="text-5xl font-bold">Sushill.</h1>
+      </div>
+      <div class="hamburger md:hidden">
+        <button class="text-5xl" onclick="handleMenu()"> X </button>
+      </div>
+    </div>
+    <div class="mt-6">
+      <a href="" class="m-3 p-3 font-medium hover:bg-gray-100 block rounded-lg">Pricing</a>
+      <a href="" class="m-3 p-3 font-medium hover:bg-gray-100 block rounded-lg">Docs</a>
+      <a href="" class="m-3 p-3 font-medium hover:bg-gray-100 block rounded-lg">Contact</a>
+      <a href="" class="m-3 p-3 font-medium hover:bg-gray-100 block rounded-lg">About</a>
+    </div>
+    <div class="h-[1px] bg-gray-200"></div>
+    <button
+      class="border border-gray-500 px-5 py-2 rounded-lg hover:border-gray-700 hover:shadow-lg shadow-md m-2 w-full">
+      Ui developer
+    </button>
+  </div>
+
+
+</body>
+<script>
+
+
+  const navDialog = document.getElementById('nav-dialog');
+
+  function handleMenu() {
+    navDialog.classList.toggle('hidden')
+  }
+
+</script>
+
+</html>
